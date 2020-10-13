@@ -14,6 +14,11 @@ export class Queue <T>{
     return this.head === undefined;
   }
 
+  public peek(): T | undefined{
+    if(!this.head) return;
+    return this.head.data;
+  }
+
   public enqueue(data: T): void{
     const node: Node<T> = new Node<T>(data);
     if(this.tail){

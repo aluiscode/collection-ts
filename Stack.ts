@@ -1,26 +1,31 @@
 import { Node } from './Node.ts';
 
 export class Stack <T>{
-  private head?: Node <T>; //Where remove
+  private top?: Node <T>; //Where remove
 
   constructor(){
-    this.head = undefined;
+    this.top = undefined;
   }
 
   public isEmpty(): boolean{
-    return this.head === undefined;
+    return this.top === undefined;
+  }
+
+  public peek(): T | undefined{
+    if(!this.top) return;
+    return this.top.data;
   }
 
   public push(data: T){
     const node: Node<T> = new Node<T>(data);
-    node.next = this.head;
-    this.head = node;
+    node.next = this.top;
+    this.top = node;
   }
 
   public pop(): T | undefined{
-    if(!this.head) return;
-    const data: T = this.head.data;
-    this.head= this.head.next;
+    if(!this.top) return;
+    const data: T = this.top.data;
+    this.top= this.top.next;
     return data;
   }
 }
