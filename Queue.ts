@@ -10,12 +10,12 @@ export class Queue <T>{
     this.tail = undefined;
   }
 
-  isEmpty(): boolean{
+  public isEmpty(): boolean{
     return this.head === undefined;
   }
 
-  enqueue(data: T): void{
-    const node = new Node(data) as Node<T>;
+  public enqueue(data: T): void{
+    const node: Node<T> = new Node<T>(data);
     if(this.tail){
       this.tail.next = node;
     }
@@ -25,7 +25,7 @@ export class Queue <T>{
     }
   }
 
-  dequeue(): T | void{
+  public dequeue(): T | void{
     if(!this.head) return;
     const data = this.head.data;
     this.head = this.head.next;

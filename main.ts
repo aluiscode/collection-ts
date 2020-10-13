@@ -1,6 +1,7 @@
-import { Queue } from './Queue.ts'
+import { Queue } from './Queue.ts';
+import { Stack } from './Stack.ts';
 
-const queue = new Queue<Number> ();
+const queue = new Queue<number>();
 
 console.log(queue.isEmpty());
 queue.enqueue(22);
@@ -11,12 +12,14 @@ console.log(queue.isEmpty());
 console.log(queue.dequeue());
 console.log(queue.isEmpty());
 
-
-
-// const queue2 = new Queue<String> ();
-
-// console.log(queue2.isEmpty());
-// queue2.enqueue("This is a string");
-// console.log(queue.isEmpty());
-// console.log(queue2.dequeue());
-// console.log(queue2.dequeue());
+const stack = new Stack<number>();
+console.log(stack.isEmpty());
+stack.push(22);
+stack.push(421);
+console.log(stack.isEmpty());
+console.log(stack.pop());
+console.log(stack.isEmpty());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.isEmpty());
+console.log(stack.isEmpty());
