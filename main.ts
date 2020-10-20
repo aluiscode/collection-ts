@@ -1,5 +1,6 @@
 import { Queue } from './Queue.ts';
 import { Stack } from './Stack.ts';
+import { List } from './List.ts';
 
 const queue = new Queue<number>();
 
@@ -21,3 +22,10 @@ stack.push(421);
 // console.log(stack.isEmpty());
 // console.log(stack.isEmpty());
 console.log(stack.peek());
+
+
+
+const list = new List<number>();
+
+list.append(55);
+list.search(55);
