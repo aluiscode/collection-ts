@@ -1,31 +1,20 @@
-import { Queue } from './Queue.ts';
-import { Stack } from './Stack.ts';
-import { List } from './List.ts';
+import { DoublyLinkedList } from './DoublyLinkedList.ts';
 
-const queue = new Queue<number>();
+const list = new DoublyLinkedList<number>();
 
-console.log(queue.isEmpty());
-queue.enqueue(22);
-queue.enqueue(2322);
-console.log(queue.peek());
+list.unshift(99);
+list.unshift(10);
+list.unshift(14);
+list.unshift(12);
+list.delete(10);
+//12 14 10 99
 
-
-const stack = new Stack<number>();
-console.log(stack.isEmpty());
-stack.push(22);
-stack.push(421);
-// console.log(stack.isEmpty());
-// console.log(stack.pop());
-// console.log(stack.isEmpty());
-// console.log(stack.pop());
-// console.log(stack.pop());
-// console.log(stack.isEmpty());
-// console.log(stack.isEmpty());
-console.log(stack.peek());
+console.log('########');
+list.forward();
+console.log('--------');
+list.backward();
+console.log('########');
 
 
 
-const list = new List<number>();
 
-list.append(55);
-list.search(55);
